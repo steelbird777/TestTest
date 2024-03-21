@@ -1,0 +1,42 @@
+buildscript {
+    repositories {
+        // Add Google's Maven repository
+        google()
+        // Add other repositories as needed
+    }
+
+    dependencies {
+        classpath 'com.google.gms:google-services:4.3.10'
+        classpath 'com.android.tools.build:gradle:8.3.0'
+    }
+}
+plugins{
+    id 'com.google.gms.google-services'
+}
+
+android {
+    namespace 'com.example.testapp'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.example.testapp"
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
